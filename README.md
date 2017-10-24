@@ -1,2 +1,2 @@
-# adventures-in-minecraft
-Chinese translation of the book "Adventures in Minecraft"
+# 为什么要翻译这本书
+

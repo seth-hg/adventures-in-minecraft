@@ -1,6 +1,6 @@
 # Summary
 
-* [译序](foreword.md)
+* [译序](README.md)
 * [前言](intro.md)
 * [冒险1：你好，世界](adventure-1.md)
 * [冒险2：追踪角色运动](adventure-2.md)
@@ -11,3 +11,4 @@
 * [冒险7：平面和立体结构](adventure-7.md)
 * [冒险8：有思想的方块](adventure-8.md)
 * [冒险9：终极冒险](adventure-9.md)
+
