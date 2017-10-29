@@ -1,44 +1,54 @@
 #冒险一：你好，世界
 
-在这本书里，你会学到如何编写程序跟minecraft进行交互，这可以让你做出很多激动人心的事。你将使用python编程语言来学习。这种用python程序控制minecraft的方式最初是为minecraft树莓派版开发的。如果你没有树莓派但是有Windows或者苹果电脑版的minecraft，也没问题-只需要一些额外的设置就可以开始编程了，后面会教你怎样做。
+在这本书里，我们会学习如何编写程序跟Minecraft的虚拟世界进行交互，这让我们可以做很多有意思的事。我们会使用Python编程语言来学习。这种用Python程序控制Minecraft世界的方式最初是为Minecraft树莓派版开发的。如果你没有树莓派但是有Windows或者苹果电脑版的Minecraft，也没问题-只需要一些额外的设置就可以开始编程了，后面会教你怎样做。
 
 >Python是本书使用的编程语言。
 
-本书有各种教你在minecraft里进行编程的冒险任务。里面有很多能让你取悦好友和使游戏变得更有趣的东西。你会发现一些能够瞬间移动游戏角色的方法，并且很快会发现建造整座城市和minecraft里从未见过的创造物是件很简单的事。
+这本书通过各种各样的冒险任务来教你如何为Minecraft进行编程。书里有很多东西可以增加游戏乐趣，你可以和伙伴们一起分享。你会发现一些能够瞬间移动游戏角色的方法，并且很快会发现建造整座城市，或者是和Minecraft里从未见过的建筑物都是件很简单的事。
 
-python编程语言自带一个叫做IDLE的代码编辑器，你要用它来创建、编辑和运行冒险任务里的程序。
+Python编程语言自带一个叫做IDLE的代码编辑器，我们要用它来创建、编辑和运行冒险任务里的程序。
 
-当程序员学习一种新的编程语言，或者一种新的做事方法时，他们总是从编写一个“hello, world”程序开始。这是一个很简单的程序，只会在屏幕上显示一行“hello, world”，用来确认需要的软件都已经安装并正常工作。
+> Python编程语言在商业和教育领域都有广泛的应用。它非常强大又很容易学习，你可以在[这里](www.python.org)了解更多关于Python语言的信息。
 
-在第一个冒险任务里，你需要设置好你的电脑，从而在minecraft的聊天栏里显示文字“hello, minecraft world”。（如图1-1）
+程序员们在学习一种新的编程语言，或者一种新的做事方法时，总是从编写一个“hello, world”程序开始。这是一个很简单的程序，只会在屏幕上显示一行“hello, world”，用来确认需要的软件都已经安装好并且可以正常工作。
 
-要进行书中的minecraft编程，你需要以下三种电脑之一：运行windows的PC，运行Mac OS X的苹果电脑或者运行Raspbian的树莓派。不同类型的电脑安装和设置软件的方式会不同，但是只要完成设置，在任意一种电脑上进行编程都是一样的。为了让设置过程更简单，你可以从配套网站上下载新手包。新手包经过测试，确保书中所有的冒险任务都能正常运行。你应该先阅读一下新手包里的README文件。文件描述了新手包里包含的东西，以及新手包是如何创建的。根据这些信息你可以很方便的自己从头来设置你的电脑，尽管这种方式并不推荐。按照书中的指引进行设置可以让你学到更多东西。
+在第一个冒险任务里，我们需要设置好自己的电脑，从而在Minecraft的聊天栏里显示文字“hello, minecraft world”（如图1-1）。
 
->正确设置电脑非常重要，否则你可能会陷入迷茫。所以请确认自己认真的按照指引进行。
+要进行书中的Minecraft编程，你需要以下三种电脑之一：运行微软Windows操作系统的个人电脑（PC），运行Mac OS X的苹果电脑，或者运行Raspbian的树莓派卡片电脑。不同类型的电脑安装和设置软件的方式会不同，但是只要完成设置，在任意一种电脑上进行编程都是一样的。为了让设置过程更简单，我们可以在配套网站上下载新手包。新手包经过测试，保证书中所有的冒险任务都能正常运行。新手包里包含了一个README文件，建议先阅读一下。文件描述了新手包里包含的内容，以及创建的方法。根据这些信息你可以很方便的从头开始设置自己的电脑，尽管这种方式并不推荐。按照本书中的指引进行设置可以学到更多东西。
+
+>**提醒**
+>
+>正确设置电非常重要，否则你可能会陷入迷茫。所以请仔细的按照指引进行。
 
 ##设置树莓派
 
 ##设置PC或者苹果电脑
 
-不管使用PC还是苹果电脑，首先都要确保minecraft已经安装并且能正常运行。如果你没有minecraft和游戏账号，请访问www.minecraft.net购买游戏。如果遇到任何安装、运行和玩游戏的问题，访问http://help.mojang.com可以获得帮助。
+不管使用PC还是苹果电脑，首先都要安装Minecraft已经并且确保能正常运行。如果还没有Minecraft和游戏账号，请访问www.minecraft.net购买游戏。遇到任何安装、运行和玩游戏的问题，都可以访问http://help.mojang.com可以获得帮助。
 
-要给PC和苹果电脑上的完整版minecraft编程，像在树莓派上一样，你需要开放源代码的minecraft服务器，[bukkit](http://bukkit.org)和[RaspberryJuice插件](http://dev.bukkit.org/bukkit-plugins/raspberryjuice)。
+> 现在我们可以免费玩到网易代理的[国服版《我的世界》](http://mc.163.com/)。
 
-Bukkit是一款minecraft服务器软件，玩家可以通过创建插件改变游戏的行为；Bukkit的RaspberryJuice插件让你可以像在树莓派上一样通过编程来操纵minecraft。你需要使用bukkit、RaspberryJuice插件和python编程语言来进行minecraft编程。
+要在PC和苹果电脑上给Minecraft编程，我们还需要开放源代码的Minecraft服务器[bukkit](http://bukkit.org)，以及[RaspberryJuice插件](http://dev.bukkit.org/bukkit-plugins/raspberryjuice)。
 
->Bukkit是一款可以用插件改变游戏的minecraft服务器软件。
+Bukkit是一款Minecraft服务器软件，玩家可以通过创建插件改变游戏的行为；Bukkit的RaspberryJuice插件让你可以像在树莓派上一样通过编程来操控Minecraft。我们要使用bukkit、RaspberryJuice插件和Python编程语言来完成本书中的编程任务。
 
+>**定义**
+>
+>Bukkit是一款可以用插件改变游戏的Minecraft服务器软件。
+
+>**定义**
+>
 >插件是一个运行在Bukkit内部的程序，可以让你改变minecraft游戏。
 
-你需要下载python编程语言安装在电脑上。这本书会一直使用python版本2，尽管版本3才是最新的，这是因为mojang提供的python函数库（用来连接minecraft）只能在python2下运行。这本书里的程序都在python 2.7.6下测试过，使用这个版本并不是必须的，但是建议使用这个版本，而且你必须使用python 2.x。
+我们需要下载Python编程语言安装在电脑上。尽管版本3才是最新的，这本书会一直使用Python版本2，这是因为mojang提供的Python函数库（用来连接Minecraft）只能在Python 2下运行。这本书里的程序都在Python 2.7.6下测试过，建议使用这个版本的Python，但这不是必须的，只需要使用Python 2.x就可以。
 
->想了解更多关于python的信息，请访问www.python.org。你可以从那里下载python。python wiki(wiki.python.org)上有很多信息、教程和python社区的网站链接。
+>想了解更多关于Python的信息，请访问www.python.org。这里提供了Python下载。Python Wiki(wiki.python.org)上有很多信息、教程和Python社区的网站链接。
 
-设置windows pc和苹果电脑来进行minecraft编程需要三个步骤：
+设置Windows PC和苹果电脑来进行Minecraft编程需要三个步骤：
 
-1. 下载并解压新手包，里面包好配置好的Bukkit服务器和RaspberryJuice插件，还有一个叫做MyAdevntures的文件夹，你需要把自己的程序保存在这个文件夹里。
-2. 下载和安装python编程语言。
-3. 设置minecraft以使用和bukkit相同的版本并连接到bukkit服务器。
+1. 下载并解压新手包，里面有配置好的Bukkit服务器和RaspberryJuice插件，还有一个叫做MyAdevntures的文件夹，我们以后要把自己编写的程序保存在这个文件夹里。
+2. 下载和安装Python编程语言。
+3. 设置Minecraft以使用和Bukkit相同的版本并连接到Bukkit服务器。
 
 >在本书配套网站（www.wiley.com/go/adventuresinminecraft）可以观看设置windows pc和苹果电脑的视频教程。
 
@@ -137,9 +147,9 @@ python shell窗口启动之后，就可以在idle中创建新程序了。接下�
 1. 在idle菜单中点击file->new file来创建新文件。（在树莓派上，new file可能叫做new window。）
 2. 在菜单中点击file->save保存文件到myadventures文件夹。
 3. 选择myadventures文件夹：
-	* 在树莓派上：
-	* 在pc上：
-	* 在苹果电脑上：
+  * 在树莓派上：
+  * 在pc上：
+  * 在苹果电脑上：
 4. 你需要给新文件起一个名字。输入文件名hellominecraftworld.py然后点击save。文件末尾的.py告诉电脑这个文件是一个python程序。
 5. 现在该开始编程了！在idle编辑窗口中输入下面的代码来创建hello minecraft world程序。确保大小写都是正确的，因为python是大小写敏感的。
 6. 在idle菜单中选择file->save保存程序。
@@ -162,9 +172,9 @@ mc.postToChat("Hello Minecraft World")
 
 1. 在运行程序之前，minecraft必须已经打开并且在游戏中。如果没有，请按照前面的学到的方法启动minecraft。
 2. 调整minecraft窗口的大小，让你可以同时看见idle窗口和minecraft。（如果使用pc或者苹果电脑，minecraft以全屏模式运行，按f11退出全屏模式，这样才能看到minecraft窗口。）这时候你应该看到下面几个窗口：
-	* 在树莓派上：你应该有三个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；以及minecraft。（图1-9）
-	* 在PC上：你应该有四个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；bukkit命令窗口；以及minecraft。（图1-10）
-	* 在苹果电脑上：你应该有四个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；bukkit命令窗口；以及minecraft。（图1-11）
+  * 在树莓派上：你应该有三个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；以及minecraft。（图1-9）
+  * 在PC上：你应该有四个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；bukkit命令窗口；以及minecraft。（图1-10）
+  * 在苹果电脑上：你应该有四个打开的窗口：python shell；idle代码编辑器，并打开了你的hellominecraft.py程序；bukkit命令窗口；以及minecraft。（图1-11）
 3. 按esc打开minecraft菜单。用鼠标指针选择idle窗口。用鼠标指针选择idle代码编辑器。
 4. 在idle菜单中点击“运行->运行模块”或者按F5键运行hellominecraftworld.py程序。
 5. idle会自动切换到python shell窗口并运行程序。如果有错误，你会在这里看到红色的错误信息。如果有任何错误，请回到idle代码编辑器窗口仔细检查你输入的代码，并跟上面的代码进行比较来找到出错的地方。
