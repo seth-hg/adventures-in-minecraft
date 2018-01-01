@@ -58,7 +58,7 @@ MinecraftDrawing对象有一个`drawLine()`函数，调用的时候传入两个�
 
 > 定义
 >
-> 有时一个函数需要某些信息才能运行，例如setBlock()函数需要x、y、z和方块类型，那么这些数值就被称作**参数**。当程序使用这些函数的时候，就是**调用**函数和**传递**参数。
+> 有时一个函数需要某些信息才能运行，例如`setBlock()`函数需要x、y、z和方块类型，那么这些数值就被称作**参数**。当程序使用这些函数的时候，就是**调用**函数和**传递**参数。
 
 下面的函数创建了一条如图7-2所示的方块组成的直线：
 
@@ -284,16 +284,16 @@ drawSphere(x, y, z, radius, blockType, blockData)
 
 10. 接着画出时针。角度是360度除以12小时，再乘以当前的小时数。用`findPointOnCircle()`函数算出时针顶端的x和y座标，再用`drawLine()`函数画出时针：
 
-   ```
-       hourHandAngle = (360 / 12) * hours
-       hourHandX, hourHandY = findPointOnCircle( 
-           clockMiddle.x, clockMiddle.y,  
-           HOUR_HAND_LENGTH, hourHandAngle)
-       mcdrawing.drawLine( 
-           clockMiddle.x, clockMiddle.y, clockMiddle.z,
-           hourHandX, hourHandY, clockMiddle.z,
-           block.DIRT.id)
-   ```
+  ```
+      hourHandAngle = (360 / 12) * hours
+      hourHandX, hourHandY = findPointOnCircle( 
+          clockMiddle.x, clockMiddle.y,  
+          HOUR_HAND_LENGTH, hourHandAngle)
+      mcdrawing.drawLine( 
+          clockMiddle.x, clockMiddle.y, clockMiddle.z,
+          hourHandX, hourHandY, clockMiddle.z,
+          block.DIRT.id)
+  ```
 
 11. 下一步画出分针，要比时针后移一个方块的距离（z-1）：
 
@@ -490,9 +490,9 @@ drawFace(points, filled, blockType, blockData)
 
 <u>深入代码</u>
 
-多边形的定点用minecraft.Vec3(x, y, z)来创建，minecraft.Vec3()是Minecraft API里用来保存三维座标(x, y, z)的方式。Vec3是三维向量（3D Vector）的缩写。
+多边形的定点用`minecraft.Vec3(x, y, z)`来创建，`minecraft.Vec3()`是Minecraft API里用来保存三维座标(x, y, z)的方式。Vec3是三维向量（3D Vector）的缩写。
 
-这些定点用append()函数添加到列表中。append()函数把一个新的数据项添加到列表的末尾。
+这些定点用`append()`函数添加到列表中。`append()`函数把一个新的数据项添加到列表的末尾。
 
 ------
 
@@ -508,7 +508,7 @@ drawFace(points, filled, blockType, blockData)
 
 你大概已经知道，金字塔的各个面（除了底面）都是三角形。埃及金字塔有四个面（如果算上底面就是5个），不过它们可以有三个以上任意多个面。你有没有发现任意金字塔的底面都可以放进一个圆里？如果不明白我的意思可以看一下图7-9。
 
-我们现在要写一个程序，用drawFace()和findPointOnCircle()两个函数来建造任意尺寸、高度和面数的金字塔：
+我们现在要写一个程序，用`drawFace()`和`findPointOnCircle()`两个函数来建造任意尺寸、高度和面数的金字塔：
 
 1. 首先，打开IDLE新建一个文件。保存到MyAdventures文件夹并命名为MinecraftPyramids.py。
 2. 输入以下几行代码导入minecraft、block、minecraftstuff和math模块：
@@ -520,7 +520,7 @@ drawFace(points, filled, blockType, blockData)
     import math
     ```
 
-3. 定义findPointOnCircle()函数，用来计算组成金字塔的每个三角形的位置：
+3. 定义`findPointOnCircle()`函数，用来计算组成金字塔的每个三角形的位置：
 
     ```
     def findPointOnCircle(cx, cy, radius, angle):
@@ -553,11 +553,11 @@ drawFace(points, filled, blockType, blockData)
     for side in range(0, PYRAMID_SIDES):
     ```
 
-    注意
+    > 注意
+    >
+    > 金字塔越大，程序运行需要的时间也越长，在Minecraft游戏中显示金字塔需要的时间也越长。如果金字塔太高，也有可能超出游戏世界的最大高度。所以请慢慢尝试，逐渐增加这些变量的值。我们可以创建巨型金字塔，但是如果太大的话可能需要一点时间才能显示出来，要耐心等待。
 
-    金字塔越大，程序运行需要的时间也越长，在Minecraft游戏中显示金字塔需要的时间也越长。如果金字塔太高，也有可能超出游戏世界的最大高度。所以请慢慢尝试，逐渐增加这些变量的值。我们可以创建巨型金字塔，但是如果太大的话可能需要一点时间才能显示出来，要耐心等待。
-
-7. 对金字塔的每个侧面，计算三角形的边的角度，然后使用findPointOnCircle()函数计算x、y、z坐标。角度是用360度除以侧面的总数再乘以当前正在绘制的面的编号来计算的，如图7-10所示。输入下面代码：
+7. 对金字塔的每个侧面，计算三角形的边的角度，然后使用`findPointOnCircle()`函数计算x、y、z坐标。角度是用360度除以侧面的总数再乘以当前正在绘制的面的编号来计算的，如图7-10所示。输入下面代码：
 
     ```
         point1Angle = int(round((360 / PYRAMID_SIDES) * side,0))
@@ -566,7 +566,7 @@ drawFace(points, filled, blockType, blockData)
         point2X, point2Z = findPointOnCircle(pyramidMiddle.x, pyramidMiddle.z, PYRAMID_RADIUS, point2Angle)
     ```
 
-8. 生成三角形的定点，并用drawFace()函数生成金字塔的一个侧面：
+8. 生成三角形的定点，并用`drawFace()`函数生成金字塔的一个侧面：
 
     ```
         trianglePoints = []
@@ -582,9 +582,9 @@ drawFace(points, filled, blockType, blockData)
                            block.SANDSTONE.id)
     ```
 
-    martin says
-
-    砂岩（block.SANDSTONE.id）是建造金字塔时很有用的一个方块类型，因为它看起来很像沙子，但是又有一个很重要的特点：它不受重力影响，底下没有其他方块支撑也不会掉落下来。如果你要用沙子来建造金字塔，你的游戏角色就会被沙子掩埋，需要花很长时间才能挖出来。
+    > martin says
+    >
+    > 砂岩（block.SANDSTONE.id）是建造金字塔时很有用的一个方块类型，因为它看起来很像沙子，但是又有一个很重要的特点：它不受重力影响，底下没有其他方块支撑也不会掉落下来。如果你要用沙子来建造金字塔，你的游戏角色就会被沙子掩埋，需要花很长时间才能挖出来。
 
 9. 保存文件并运行程序。你会看到一个金字塔在角色的上方出现——并且把他困在里面！
 
@@ -592,13 +592,13 @@ drawFace(points, filled, blockType, blockData)
 
 你也可以从本书的配套网站上下载完整的代码。
 
-挑战
-
-我们创建的金字塔没有底面。试试看你能不能生成一个恰好能填充金字塔底部的多边形。这对于一个有四个侧面的金字塔是很容易的，不过如果你的代码正确，应该也可以同样应用于有5、6、7个侧面的金字塔。
+> 挑战
+>
+> 我们创建的金字塔没有底面。试试看你能不能生成一个恰好能填充金字塔底部的多边形。这对于一个有四个侧面的金字塔是很容易的，不过如果你的代码正确，应该也可以同样应用于有5、6、7个侧面的金字塔。
 
 ##关于二维和三维形状的更多冒险
 
-使用drawFace()函数可以生成各种类型的多面体，也就是由多个平面组成的立体图形（就像我们刚才创建的金字塔），为什么不试着创造更多东西呢？
+使用`drawFace()`函数可以生成各种类型的多面体，也就是由多个平面组成的立体图形（就像我们刚才创建的金字塔），为什么不试着创造更多东西呢？
 
 在下面这些网页可以找到很多关于多面体的例子和好点子：
 
@@ -606,6 +606,6 @@ drawFace(points, filled, blockType, blockData)
 * [Kids Math Games](www.kidsmathgamesonline.com/facts/geometry/3dpolyhedronshapes.html)
 
 
-下一个冒险
+##下一个冒险
 
-在下一个冒险任务里，我们要学习如何让Minecraft物体拥有自己的思想，跟方块交朋友，避免异形的入侵。
+在下一个冒险任务里，我们要学习如何让Minecraft物体拥有自己的思想，跟方块交朋友，抵抗外星人的入侵。
