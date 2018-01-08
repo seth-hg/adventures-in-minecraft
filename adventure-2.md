@@ -8,7 +8,7 @@
 
 >程序是你用某种编程语言编写的一组指令或者语句，计算机将会自动执行这些指令。必须使用编程语言中正确的指令。在本书中，我们会使用Python编程语言。
 
->“语句”是一个通用计算机术语，通常是指给计算机的一个完整的指令，比如像print("Hello steve")这样的一行计算机程序。有些人也用“命令”这个词，不过那通常是指在命令提示符后输入给电脑的命令。
+>“语句”是一个通用计算机术语，通常是指给计算机的一个完整的指令，比如像print("Hello Steve")这样的一行计算机程序。有些人也用“命令”这个词，不过那通常是指在命令提示符后输入给电脑的命令。
 >Python对于什么是语句有自己的准确解释，不过对于这本书来讲，我会用语句这个词来表示Python程序中的一条指令或者一行。想了解更多Python的知识，可以在[这里](https://docs.Python.org/2/)阅读在线文档。
 
 ##感知角色的位置
@@ -33,8 +33,6 @@
 
 冒险任务一详细解释了怎样让程序运行起来，随着冒险任务的进行我们会越来越熟悉这些步骤。从启动程序到开始输入代码需要的所有步骤都在冒险任务一里介绍了，不过在最初的几个冒险任务中，还是会给出步骤提示，方便你熟悉这些操作。
 
->想要关于如何在你的电脑上运行Minecraft的提示，请访问配套网站www.wiley.com/go/adventuresinminecraft，选择冒险任务1 视频。
-
 1. 启动Minecraft，IDLE，如果在PC或者苹果电脑上运行，还要启动服务器。我们已经练习过如何启动这些程序，需要提示的话请复习冒险任务一。
 2. 打开Python集成开发环境IDLE，就像在冒险任务一里那样。这是我们进入Python编程语言的入口，也是输入和运行所有Python程序的地方。
 
@@ -58,7 +56,7 @@
     mc = minecraft.Minecraft.create()
     ```
 
->记住Python是大小写敏感的语言——所以请注意单词的大小写！大小写字母输入正确是很重要的。这里输入的第二个Minecraft必须以大写字母开头才能正确运行。
+    > 记住Python是大小写敏感的语言——所以请注意单词的大小写！大小写字母输入正确是很重要的。这里输入的第二个Minecraft必须以大写字母开头才能正确运行。
 
 5. 接下来，用`getTilePos()`来获得游戏角色的位置：
 
@@ -106,7 +104,7 @@ print(a)
 
 你在`pos = mc.player.getTilePos()`里使用的`pos`变量是一种特殊类型的变量。把它想象成一个有三个隔层的盒子，隔层上分别贴着x、y和z的标签：
 
-​```
+```
 print(pos.x)
 ```
 
@@ -115,14 +113,13 @@ print(pos.x)
 ------
 
 
-
 >变量计算机内存中某个位置的名字。你的程序可以在任何时候向变量里存储新的数值，也可以把他们取回来进行显示或者计算。可以把它想象成计算器上的Memory按钮。
 
 ##更清晰的位置显示
 
 在继续做更多工作之前，你可以改进一下角色坐标的显示以便让它更容易理解。每次显示位置都输出3行会占用很多空间；把角色坐标的三部分全部放在一行会更好，像这样：
 
-​```
+```
 x=10, y=2, z=20
 ```
 
@@ -172,7 +169,6 @@ print("x= "+pos.x)
 ------
 
 
-
 >字符串是用来存储一组字母、数字和符号的一种变量类型。把它想象成一条穿过珠子的细线，你可以像项链或手环一样在上面滑动，这就是它被称作字符串（string）的原因。每个念珠上面可以印着不同的字母、数字或符号。字符串按照你给的顺序保存它们。
 >
 >字符串可以有很多不同的用法，比如保存你的名字、一个地址或者一条要在Minecraft聊天频道显示的消息。
@@ -213,9 +209,9 @@ print("x= "+pos.x)
 
     ```
     while True:
-  	    time.sleep(1)
-  	    pos = mc.player.getTilePos()
-  	    mc.postToChat("x="+str(pos.x) +" y="+str(pos.y) + " z="+str(pos.z))
+        time.sleep(1)
+        pos = mc.player.getTilePos()
+        mc.postToChat("x="+str(pos.x) +" y="+str(pos.y) + " z="+str(pos.z))
     ```
 
 4. 在编辑器菜单选择File->Save保存修改。
@@ -300,7 +296,7 @@ while True:
 
     ```
     if a>5 and a<10:
-  	    print("between")
+        print("between")
     ```
 
 3. 把a改成小于5的值，看看会发生什么（见图2-4）：
@@ -308,7 +304,7 @@ while True:
     ```
     a=3
     if a>5 and a<10:
-  	    print("between")
+        print("between")
     ```
 
 >挑战
@@ -332,7 +328,7 @@ while True:
 
 1. 在Python Shell菜单中选择File->New File新建一个程序。
 
-2. 在编辑器菜单中选择File->Save As保存程序，命名为welcomeHome.py。记住程序需要保存着MyAdventures文件夹才能征程工作。
+2. 在编辑器菜单中选择File->Save As保存程序，命名为welcomeHome.py。记住程序需要保存着MyAdventures文件夹才能正常工作。
 
 3. 输入下面代码来导入程序需要的模块：
 
@@ -351,15 +347,15 @@ while True:
 
     ```
     while True:
-   	    time.sleep(1)
-   	    pos = mc.player.getTilePos()
+        time.sleep(1)
+        pos = mc.player.getTilePos()
     ```
 
 6. 添加if语句检查角色是否站在门垫上。这里要使用带有and的if语句来同时检查两个条件。门垫的x和z坐标必须同时和角色的位置一致才能判断角色正站在门垫上。还记得你之前得到的x和z坐标吗？写在这里让程序知道你的门垫在什么位置：
 
     ```
-   	if pos.x == 10 and pos.z == 12
-   		mc.postToChat("welcome home")
+        if pos.x == 10 and pos.z == 12
+            mc.postToChat("welcome home")
     ```
 
 来试试我们的程序能否工作！在编辑器菜单选择Run->Run Module，然后在Minecraft世界里走走。当你的角色站在门垫上，程序应该会说“welcome home”，像图2-5这样，很酷吧！
@@ -496,21 +492,21 @@ z2 = 20
 
     ```
     while True:
-  	    time.sleep(1)
+        time.sleep(1)
     ```
 
 8. 判定角色是否在围栏圈定的区域之前，需要先获得角色的坐标。就像在之前的程序中一样，用player.getTilePos()来实现：
 
     ```
-  	    pos = mc.player.getTilePos()
+        pos = mc.player.getTilePos()
     ```
 
 9. 现在到了程序最重要的部分。这里你要让程序使用之前获得的四个坐标来判断角色是否在围栏区域内，如果是，就要收取租金并且向聊天栏发送一条消息通知它。输入下面代码：
 
     ```
-   	    if pos.x>X1 and pos.x<X2 and pos.z>Z1 and pos.z<Z2:
-   		    rent = rent+1
-   		    mc.postToChat("You owe rent:"+str(rent)) 
+        if pos.x>X1 and pos.x<X2 and pos.z>Z1 and pos.z<Z2:
+            rent = rent+1
+            mc.postToChat("You owe rent:"+str(rent)) 
     ```
 
    ​
@@ -555,26 +551,26 @@ z2 = 20
 
     ```
     if pos.x>X1 and pos.x<X2 and pos.z>Z1 and pos.z<Z2:
-  	    rent = rent+1
-  	    mc.postToChat("You owe rent:"+str(rent))
-  	    inField = inField+1
+        rent = rent+1
+        mc.postToChat("You owe rent:"+str(rent))
+        inField = inField+1
     ```
 
 4. 现在你要增加一个`else`语句，让程序在角色离开围栏之后重置计时器为0。请确保else语句的缩进正确这样Python才能理解你的意思。你很快就会学到`else`语句以及符号#的用法，但是现在，只要增加下面粗体的代码就可以了：
 
     ```
-  	    mc.postToChat("You owe rent:"+str(rent))
-  	    inField = inField+1
+        mc.postToChat("You owe rent:"+str(rent))
+        inField = inField+1
     else: # not inside the field
-  	    inField = 0
+        inField = 0
     ```
 
 5. 最后，你需要在原来程序的末尾增加几行代码来弹射角色。这些代码正好在原先代码的后面。`if`语句必须缩进一级因为它是`while`循环的一部分，if之下的语句需要缩进两级。输入下面代码：
 
     ```
     if inField>3:
-  	    mc.postToChat("Too slow!")
-  	    mc.player.setPos(HOME_X, HOME_Y, HOME_Z)
+        mc.postToChat("Too slow!")
+        mc.player.setPos(HOME_X, HOME_Y, HOME_Z)
     ```
 
 6. 保存程序，在菜单选择Run->Run Module运行程序。
@@ -604,9 +600,18 @@ if语句不一定要有对应的`else`语句（是可选的），但是有时你
 
 注释以#符号开始，像这样：
 
+```
+# this is a comment（这是注释）
+```
+
+>如果要在程序中使用中文，则需要在程序最上方加入下面这一行：
+>
+>```
+>#! encoding=utf8
+>```
+
 ------
 
-​	`# this is a comment（这是注释）`
 
 我们可以在一行里的任意位置放置注释。从`#`符号开始到那一行末尾的所有内容都会被Python语言忽略。
 
